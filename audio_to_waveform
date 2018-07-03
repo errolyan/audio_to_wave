@@ -1,0 +1,12 @@
+import wave
+import numpy as np
+import matplotlib.pyplot as plt
+
+filepath = "DataSet/yuexijiang.wav"
+fwav = wave.open(filepath,)
+print(fwav)
+
+params = fwav.getparams()
+nchannels,sampwidth,framerate,nframes = params[:4]
+strData = fwav.readframes(nframes)
+w= np.fromstring(strData,dtype=np.int16)
